@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
+{% block css %}
+<link href="../static/css/style.css" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
-<h1>Hello World!</h1>
+<div>
+    <form method="POST">
+        <div>
+            {{ form.hidden_tag() }}
+            {{ form.name.label }}
+            {{ form.name() }}
+        </div>
+        {{ form.submit }}
+    </form>
+</div>
 {% endblock %}
