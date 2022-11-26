@@ -13,5 +13,13 @@
         </div>
         {{ form.submit }}
     </form>
+    <div>
+        {% for crypto in data %}
+        <p>
+            <span>{{crypto.name}}</span>
+            <span>{{crypto.price}}</span>
+        </p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
