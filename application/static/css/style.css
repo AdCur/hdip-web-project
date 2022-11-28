@@ -1,0 +1,17 @@
+.navbar {
+    padding: 10px 25px !important;
+    /* important is used to overwrite bootstrap */
+}
+
+.navbar-brand {
+    font-family: 'Lobster';
+    font-size: 25px;
+}
+
+nav .navbar-nav li a {
+    color: white !important
+}
+
+nav .navbar lia a:hover {
+    color: #f5473b !important
+}
