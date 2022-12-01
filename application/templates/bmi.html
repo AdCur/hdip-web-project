@@ -1,1 +1,80 @@
 {% extends 'base.html' %}
+<!-- start of main content -->
+{% block content %}
+<div class="row ml-4 mt-2 mb-2">
+    <h3 class="mt-2">Body Mass Index</h3>
+    <button type="button" class="btn btn-success btn-xs m-2 mr-4" data-toggle="modal" data-target="#mymodal">Add
+        BMI</button>
+</div>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-success alert-dissmissable ml-2mr-2" role="alert">
+    {% for message in messages %}
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="True">x</span>
+    </button>
+    {{message}}
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+<!-- table -->
+<table class="table" style="width: 40%">
+    <tr>
+        <th>#</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Delete</th>
+        <th>Result</th>
+    </tr>
+    <!-- for loop to retreive all coins from the database -->
+    {% for row in bmi %}
+    <tr>
+        <td>{{row.id}}</td>
+        <td>{{row.height,'M'}}</td>
+        <td>{{row.weight,'Kg'}}</td>
+        <td>
+            <!-- url for deleting each bmi by id -->
+            <a href="/delete-Bmi/{{row.id}}" class="btn btn-danger btn-xs"
+                onclick="return confirm('Are you sure you want to delete this bmi?')">Delete</a>
+        </td>
+        <td>
+            <a href="/gen-visual/{{row.id}}" class="btn btn-success btn xs">Result</a>
+
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<!-- modal to add bmi -->
+<div id="mymodal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add BMI</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label>Height (m):</label>
+                        <input type="float" class="form-control" name="height" required="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Weight (kg):</label>
+                        <input type="float" class="form-control" name="weight" required="1">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- end of main content -->
