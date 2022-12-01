@@ -8,7 +8,7 @@
 </div>
 {% with messages = get_flashed_messages() %}
 {% if messages %}
-<div class="alert alert-success alert-dissmissable ml-2 mr-2" role="alert">
+<div class="alert alert-success alert-dissmissable ml-2mr-2" role="alert">
     {% for message in messages %}
     <button type="button" class="close" data-dismiss="alert" aria-label="close">
         <span aria-hidden="True">x</span>
@@ -34,11 +34,11 @@
     <tr>
         <td>{{row.id}}</td>
         <td><img width="35" height="35" src="{{row.image}}"></td>
-        <td>{{row.name}}</td>
+        <td><a href="/draw-graph/{{row.name}}"">{{row.name}}</a></td> 
         <td>{{row.symbol}}</td>
         <td>€{{row.price}}</td>
         {% if row.percentage >= 0 %}
-        <td class="text-success">+{{row.percentage}}%</td>
+        <td class=" text-success">+{{row.percentage}}%</td>
         {% else %}
         <td class="text-danger">{{row.percentage}}%</td>
         {% endif %}
