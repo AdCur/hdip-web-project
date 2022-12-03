@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content%}
+<H1>About Improvement Hub</H1>
+<hr>
+<div>
+    <h3>what is this website about?</h3>
+    <p>This website is designed to help the user find news and informaiton about important
+        headings related to bettering yourself and your future prospects. Each tab allows you to gain some insight
+        whether its prices,news or whether or not you need to lose or gain weight in order to be in better physical
+        health. The goal is for users to access the website and be able to use the tabs to gain knowledge on bettering
+        aspects of their lives that in some cases lead to depression and or other related mental health struggles.</p>
+    <hr>
+</div>
+<div>
+    <h3>Cryptocurrency</h3>
+    <p>The idea behind adding cryptocurrency tab is to get the user interested in alternaitve ways of using, saving and
+        investing money .The feature on the Crypto tab allows the user to add a new cryptocurrency by name.This then
+        returns some details from a crypto coin api based on the the coin added to the database by the user.There is an
+        option to generate a graph from the coin name link which shows the price fluctuations visually from
+        the last seven days.Coins can be added and deleted from the database at the click of a button.This tab also
+        features the latest cryptocurrency news related headings from a news api a query is called from the code that
+        allows filtering by cryptocurrencies
+
+
+    </p>
+    <hr>
+</div>
+<div>
+    <h3>Financial</h3>
+    <p>The financial page is aimed at delivering the latest finance and business news to help the user get a better
+        understanding of business and financial topics by having access to headlines and articles.This is a call to a
+        news api. Again the intention is to encourage the user to explore these headings and gain more knowledge in
+        finance and business leading to better money management etc.</p>
+    <hr>
+</div>
+<div>
+    <h3>Body mass index calculator</h3>
+    <p>The body mass index calculator is a tool i have added to allow the user to understand where their body weight is
+        at from a health point of view, as this contributes to self confidence another factor in having a good mental
+        state.The user enters their weight and height to a form where the inputs are queried to a BMi calculator APi.An
+        image is then generated with a visual scale to compare with the retured bmi and weight category.</p>
+    <hr>
+</div>
+
+{% endblock %}
